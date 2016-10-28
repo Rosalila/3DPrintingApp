@@ -1,0 +1,14 @@
+<h1>Prueba</h1>
+
+<ul>
+<% for(var i=0; i<repos.length; i++){ %>
+  <li>
+    <span><%= repos[i] %></span>
+    <a href="/thing/<%= repos[i] %>">
+      <img src="https://raw.githubusercontent.com/Rosalila3DPrinting/<%= repos[i] %>/master/image.png"/>
+    </a>
+    <a href="/print/<%= repos[i] %>">print</a>
+    </a>
+  </li>
+<% } %>
+</ul>

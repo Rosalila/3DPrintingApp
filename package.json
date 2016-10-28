@@ -1,0 +1,10 @@
+{
+  "name": "Rosalila3DPrinting",
+  "description": "this a project",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "request": "*"
+  }
+}
