@@ -1,14 +1,39 @@
-<h1>Prueba</h1>
+<% include header %>
 
-<ul>
+
+	<div class="section">
+		<div class="row">
 <% for(var i=0; i<repos.length; i++){ %>
-  <li>
-    <span><%= repos[i] %></span>
-    <a href="/thing/<%= repos[i] %>">
-      <img src="https://raw.githubusercontent.com/Rosalila3DPrinting/<%= repos[i] %>/master/image.png"/>
-    </a>
-    <a href="/print/<%= repos[i] %>">print</a>
-    </a>
-  </li>
+
+		  <div class="col s12 m4">
+		    <div class="card medium">
+		      <div class="card-image">
+		        <img class="materialboxed" src="https://raw.githubusercontent.com/Rosalila3DPrinting/<%= repos[i].name %>/master/image.png">
+		        <span class="card-title"><%= repos[i].name %></span>
+		      </div>
+		      <div class="card-content">
+		        <p><%= repos[i].description %></p>
+		      </div>
+		      <div class="card-action">
+          <form action="/print/<%= repos[i].name %>" method="get">
+            <div class="input-field col s8">
+              <i class="material-icons prefix">print</i>
+              <input id="icon_prefix" type="text" class="validate" name="api_key">
+              <label for="icon_prefix">Api Key</label>
+            </div>
+          </form>
+		        <a href="<%= repos[i].homepage %>">
+              <i class="material-icons">home</i>
+						</a>
+						<a href="/thing/<%= repos[i].name %>">
+              <i class="material-icons">zoom_in</i>
+						</a>
+		      </div>
+		    </div>
+		  </div>
+
 <% } %>
-</ul>
+		  </div>
+  </div>
+
+<% include footer %>
