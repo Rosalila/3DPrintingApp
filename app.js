@@ -45,8 +45,17 @@ app.get('/print/*', function(req, res) {
 
 console.log(api_key)
 
+  var repo_name_aux = req.url.slice(7)
+  var repo_name = ""
+  for(var i=0;i<repo_name_aux.length;i++)
+  {
+    if(repo_name_aux[i]=='?')
+      break;
+    repo_name+=repo_name_aux[i]
+  }
+
   var options = {
-    url: 'https://raw.githubusercontent.com/Rosalila3DPrinting/'+req.url.slice(7)+'/master/toolpath.gcode',
+    url: 'https://raw.githubusercontent.com/Rosalila3DPrinting/'+repo_name+'/master/toolpath.gcode',
     headers: {
     'User-Agent': 'request'
     }
