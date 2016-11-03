@@ -43,6 +43,8 @@ app.get('/print/*', function(req, res) {
 
   var api_key = req.query.api_key
 
+console.log(api_key)
+
   var options = {
     url: 'https://raw.githubusercontent.com/Rosalila3DPrinting/'+req.url.slice(7)+'/master/toolpath.gcode',
     headers: {
