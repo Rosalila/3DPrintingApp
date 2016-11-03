@@ -62,7 +62,7 @@ app.get('/print/*', function(req, res) {
 
       request.post
       ({
-        url: 'http://local.rosalilastudio.com:5000/api/files/local',
+        url: 'http://3dprinting.rosalilastudio.com:5000/api/files/local',
         headers:
         {
           'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryDeC2E3iWbTv1PwMC',
@@ -84,7 +84,7 @@ console.log(body)
 
         request.post
         ({
-          url: 'http://local.rosalilastudio.com:5000/api/files/local/toolpath.gcode',
+          url: 'http://3dprinting.rosalilastudio.com:5000/api/files/local/toolpath.gcode',
           headers:
           {
             'Content-Type': 'application/json',
